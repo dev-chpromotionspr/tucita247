@@ -97,14 +97,17 @@
                 <div class="col-md mt-2 title-qeue" i18n="Citas|text in citas@@host.citas">
                     Citas
                 </div>
-                <div class="col-md mt-2 title-qeue">
+                <div class="col-md mt-2 title-qeue container-title-upcoming">
                     <ng-container i18n="Walk-Ins|text in citas@@host.upcomming">Upcoming</ng-container>
-                    <button mat-mini-fab class="add_client" *ngIf="locationStatus == 1" (click)="showAppointment()">
-                        <mat-icon>add</mat-icon>
-                    </button>
-                    <button mat-icon-button color="secondary" class="download-btn" (click)="reloadData()">
-                        <mat-icon class="download-ico" svgIcon="download"></mat-icon>
-                    </button>
+                    <div class="w-100 d-flex container-buttons">
+                        <button mat-mini-fab class="add_client" *ngIf="locationStatus == 1" (click)="showAppointment()">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                        <button mat-icon-button color="secondary" class="download-btn" (click)="reloadData()">
+                            <mat-icon class="download-ico" svgIcon="download"></mat-icon>
+                        </button>
+                    </div>
+                    
                 </div>
                 <div class="col-md mt-2 title-qeue" i18n="Ready To Check-In|text in citas@@host.readycheckin">
                     Ready To Check-In
@@ -547,10 +550,10 @@
                         <ng-container *ngIf="checkIn$ | async"></ng-container>
                         <ng-container *ngIf="newTime$ | async"></ng-container>
                         <mat-card class="mt-2 appCard" *ngFor="let item of preCheckIn;let i=index" cdkDrag>
-                            <div class="row pr-3 pl-3">
+                            <div class="row pr-3 pl-3 container-title">
                                 <div *ngIf="!item.OpenItem" class="card-user col-md-9 pl-0 pr-0">{{item.Name}}</div>
                                 <div *ngIf="item.OpenItem" class="card-user-disp col-md-9 pl-0 pr-0">{{item.Name}}</div>
-                                <div class="col-md pr-0 pl-0">
+                                <div class="col-md pr-0 pl-0 container-controllers">
                                     <button mat-icon-button class="elapsed-clock" color="secondary" *ngIf="item.ElapsedTime != '' && item.Pause == '0'" (click)="onPause(item, '1')" i18n-matTooltip="Resume|Resume@@host.resume" matTooltip="Resume"><mat-icon class="size-icon" svgIcon="clock"></mat-icon></button>
                                     <button mat-icon-button class="elapsed-clock" color="secondary" *ngIf="item.ElapsedTime != '' && item.Pause == '1'" (click)="onPause(item, '0')" i18n-matTooltip="Pause|Resume@@host.pause" matTooltip="Pause"><mat-icon class="size-icon" svgIcon="pause"></mat-icon></button>
                                     <div class="buffer-time">
@@ -559,7 +562,7 @@
                                     <div class="elapsed-tag">{{ (item.ElapsedTime > 1 ? 'mins' : 'min') }}</div>
                                 </div>
                             </div>
-                            <div class="row pr-3 pl-3">
+                            <div class="row pr-3 pl-3 container-phone">
                                 <div class="card-phone col-md-9 pl-0 pr-0">{{item.Phone | phone}}</div>
                                 <div class="card-disability-pre col-md pr-0 pl-0">
                                     <mat-icon *ngIf="item.Disability == '1'" svgIcon="older"></mat-icon>
@@ -584,7 +587,7 @@
                                     <div class="card-contentprio col-md-6 pl-0" i18n="Service: |text in citas@@host.servicetext">Service: </div><div class="card-resultprio col-md">{{item.Service}}</div>
                                 </div>
                             </ng-container>
-                            <div class="row mb-0 mt-2 p-0">
+                            <div class="row mb-0 mt-2 p-0 container-buttons">
                                 <div class="card-actions-center col-sm-3 p-0">
                                     <button mat-icon-button color="secondary" (click)="onShowCancel(item)" i18n-matTooltip="Cancel this booking|Cancel this booking tooltip@@learnMore.LMCON36" matTooltip="Cancel this booking">
                                         <mat-icon svgIcon="cancel"></mat-icon>
