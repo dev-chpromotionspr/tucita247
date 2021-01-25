@@ -454,6 +454,16 @@ mat-menu{
 ::ng-deep .mat-tooltip {
     background-color: #ff4f00;
 }
+.waitlist::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+  
+.waitlist::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color:#ff4f00;
+    box-shadow: 0 0 1px #ff4f00;
+}
 @media (max-width: 1024px){
     .title-qeue{
         font-size: 20px;
