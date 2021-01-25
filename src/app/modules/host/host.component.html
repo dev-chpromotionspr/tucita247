@@ -99,6 +99,7 @@
                 </div>
                 <div class="col-md mt-2 title-qeue container-title-upcoming">
                     <ng-container i18n="Walk-Ins|text in citas@@host.upcomming">Upcoming</ng-container>
+<<<<<<< HEAD
                     <div class="w-100 d-flex container-buttons">
                         <button mat-mini-fab class="add_client" *ngIf="locationStatus == 1" (click)="showAppointment()">
                             <mat-icon>add</mat-icon>
@@ -108,6 +109,14 @@
                         </button>
                     </div>
                     
+=======
+                    <button mat-mini-fab class="add_client" *ngIf="locationStatus == 1" (click)="showAppointment()">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                    <button mat-icon-button class="download-btn" *ngIf="locationStatus == 1" (click)="reloadData()">
+                        <mat-icon class="download-ico" svgIcon="download"></mat-icon>
+                    </button>
+>>>>>>> d04167b9b5eaf536b1ae1a3e866659a061cf46f6
                 </div>
                 <div class="col-md mt-2 title-qeue" i18n="Ready To Check-In|text in citas@@host.readycheckin">
                     Ready To Check-In
@@ -438,7 +447,7 @@
                         <ng-container *ngIf="appointmentsWaitList$ | async"></ng-container>
                         <ng-container *ngIf="reload$ | async"></ng-container>
                         <div class="title-qeue" i18n="Waiting List|text in citas@@host.waitinglist">Waiting List</div>
-                        <div class="col-md waitlist">
+                        <div class="col-md waitlist pr-3 disp-scroll">
                             <mat-card class="mt-2 appCard" *ngFor="let item of waitlist;let i=index" cdkDrag>
                                 <div class="row pr-3 pl-3">
                                     <div *ngIf="!item.OpenItem" class="card-user col-md-9 pl-0 pr-0">{{item.Name}}</div>
@@ -553,13 +562,27 @@
                             <div class="row pr-3 pl-3 container-title">
                                 <div *ngIf="!item.OpenItem" class="card-user col-md-9 pl-0 pr-0">{{item.Name}}</div>
                                 <div *ngIf="item.OpenItem" class="card-user-disp col-md-9 pl-0 pr-0">{{item.Name}}</div>
+<<<<<<< HEAD
                                 <div class="col-md pr-0 pl-0 container-controllers">
                                     <button mat-icon-button class="elapsed-clock" color="secondary" *ngIf="item.ElapsedTime != '' && item.Pause == '0'" (click)="onPause(item, '1')" i18n-matTooltip="Resume|Resume@@host.resume" matTooltip="Resume"><mat-icon class="size-icon" svgIcon="clock"></mat-icon></button>
                                     <button mat-icon-button class="elapsed-clock" color="secondary" *ngIf="item.ElapsedTime != '' && item.Pause == '1'" (click)="onPause(item, '0')" i18n-matTooltip="Pause|Resume@@host.pause" matTooltip="Pause"><mat-icon class="size-icon" svgIcon="pause"></mat-icon></button>
                                     <div class="buffer-time">
                                         <span class="elapsed-time">{{item.ElapsedTime}}</span>
+=======
+                                <div class="col-md pr-0 pl-0">
+                                    <div class="row m-0">
+                                        <div class="col-md-7 p-0 disp-button">
+                                            <button mat-icon-button class="elapsed-clock" color="secondary" *ngIf="item.ElapsedTime != '' && item.Pause == '0'" (click)="onPause(item, '1')" i18n-matTooltip="Resume|Resume@@host.resume" matTooltip="Resume"><mat-icon class="size-icon play-btn" svgIcon="clock"></mat-icon></button>
+                                            <button mat-icon-button class="elapsed-clock" color="secondary" *ngIf="item.ElapsedTime != '' && item.Pause == '1'" (click)="onPause(item, '0')" i18n-matTooltip="Pause|Resume@@host.pause" matTooltip="Pause"><mat-icon class="size-icon play-btn" svgIcon="pause"></mat-icon></button>
+                                        </div>
+                                        <div class="col-md-5 p-0">
+                                            <div class="buffer-time">
+                                                <span class="elapsed-time">{{item.ElapsedTime}}</span>
+                                            </div>
+                                            <div class="elapsed-tag">{{ (item.ElapsedTime > 1 ? 'mins' : 'min') }}</div>
+                                        </div>
+>>>>>>> d04167b9b5eaf536b1ae1a3e866659a061cf46f6
                                     </div>
-                                    <div class="elapsed-tag">{{ (item.ElapsedTime > 1 ? 'mins' : 'min') }}</div>
                                 </div>
                             </div>
                             <div class="row pr-3 pl-3 container-phone">

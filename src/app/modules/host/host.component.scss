@@ -165,6 +165,8 @@ button.mat-stroked-button
     width: 35px;
     box-shadow: none !important;
     border: 1px solid #ff4f00;
+    position: relative;
+    left: 10px;
 }
 .card-previous{
     font-family: Montserrat;
@@ -345,11 +347,14 @@ mat-icon.mat-icon.notranslate.material-icons.mat-icon-no-color {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1px;
     text-align: right;
     color: #FF4F00;
     display: flow-root;
+    position: relative;
+    float: left;
+    left: -3px;
 }
 .buffer-time{
     margin-left: auto;
@@ -363,8 +368,9 @@ mat-icon.mat-icon.notranslate.material-icons.mat-icon-no-color {
     font-size: 20px;
     height: 20px;
     line-height: 20px;
-    float: left;
-    margin-top: 5px;
+}
+.disp-button{
+    text-align: right;
 }
 .checkin-list{
     font-family: Montserrat;
@@ -437,8 +443,8 @@ mat-menu{
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 .download-ico{
-    width: 40px;
-    height: 40px;
+    width: 37px;
+    height: 37px;
 }
 .download-btn{
     width: 35px;
@@ -491,12 +497,15 @@ mat-menu{
     }
     .elapsed-tag{
         font-size:13px;
+        text-align: right;
     }
     .elapsed-clock{
-        height: 16px;
-        width: 16px;
-        left: 0px;
-        top: -3px;
+        font-size: 20px;
+        height: 50px;
+        line-height: 20px;
+        text-align: left;
+        position:absolute;
+        top:-15px;
     }
     .card-contentprio{
         line-height: 12px;
